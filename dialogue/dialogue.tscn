@@ -27,14 +27,13 @@ offset_right = 243.0
 offset_bottom = 26.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Name:"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 3.0
 offset_top = 6.0
-offset_right = 303.0
+offset_right = 304.0
 offset_bottom = 68.0
 scale = Vector2(0.2, 0.2)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "có có có có..."
+text = "Campus SPP, muito massa"

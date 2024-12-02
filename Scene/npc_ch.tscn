@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://7eaounn2l8wr"]
+
+[ext_resource type="Texture2D" uid="uid://bvygg3pmawdvc" path="res://ncp/npc.png" id="1_c2vgv"]
+[ext_resource type="Script" path="res://ncp/npc_ch.gd" id="1_plsg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ruhr"]
+size = Vector2(57, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7rbl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2vgv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="npc_ch" type="Node2D"]
+script = ExtResource("1_plsg1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, -36)
+shape = SubResource("RectangleShape2D_6ruhr")
+
+[node name="Textura" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -32)
+scale = Vector2(0.206, 0.206)
+sprite_frames = SubResource("SpriteFrames_7rbl8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -103.0
+offset_right = 19.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.85098, 0.0196078, 0.0196078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.882353)
+text = "
+"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
